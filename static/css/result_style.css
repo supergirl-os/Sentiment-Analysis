@@ -1,0 +1,26 @@
+.good-info{
+    text-align: center;
+    width: 80%;
+    height:100%
+    display: flex;
+}
+body{ text-align:center}
+.container-info{
+    margin:0 auto;
+    width:80%;
+    height:100%;
+    }
+.navbar-info{
+    background: #17a2b8;;
+}
+.text-info{
+    padding-top:30px;
+}
+.row{
+    width:80%;
+}
+.comment{
+   margin:0 auto;
+    width:80%;
+    height:100%;
+}

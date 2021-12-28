@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>review classification</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-size: cover;
+            background: url(../static/images/test_background.jpg) no-repeat fixed center 0;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -ms-background-size: cover;
+
+        }
+    </style>
+</head>
+<body>
+<div class="text-center">
+    <h3>您检查的文本是:</h3>
+    <div>{{ review }}</div>
+
+    <h3>预测结果:</h3>
+    <div>
+        该语句是 <strong>{{ label }}</strong>
+    </div>
+</div>
+<div id="return" class="text-center">
+    <a class="btn btn-primary btn-lg" href="{{ url_for("index") }}">返回主页
+    </a>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+@import 'reset.css';
+@import 'iconfont.css';
+
+.searchBlk{
+	border-radius: 20px;
+	background-color: white;
+	box-shadow: 5px 5px 15px #cfd3d5, -5px -5px 15px #fff;
+	overflow: hidden;
+	position: relative;
+	max-width: 760px;
+	width: 100%;
+	display: flex;
+	/* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+	height: 44px;
+	margin: 200px auto 100px auto;
+	font-size: inherit;
+	/* transition: 0.3s linear; */
+}
+.search-input {
+    flex: 1;
+    width: auto;
+}
+.search-input, .search-btn {
+    z-index: 1;
+    position: relative;
+    border: none;
+    background: transparent;
+    outline: transparent !important;
+}
+button, input {
+    overflow: visible;
+	margin-left: 15px;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+.tips{
+	text-align:center;
+	font-size: inherit;
+	
+}
+.jump{
+	padding-top: 50px;
+	text-align: center;
+}
+.tubiao{padding-right: 50px;}
+
+.text{
+    text-align: center;
+	font-size: inherit;
+	color: #C0C0C0;
+	text-align: center;
+}

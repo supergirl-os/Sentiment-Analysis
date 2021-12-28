@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>基于NLP的商品评价系统</title>
+		<link rel="stylesheet" href="../static/css/iconfont.css">
+		<link rel="stylesheet" href="../static/css/index.css">
+		<!-- <link rel="icon" href="favicon.ico"> -->
+		<base target="_blank">
+
+	</head>
+	<body>
+		<script src="{{ url_for('static',filename='js/jquery-3.6.0.js') }}"></script>
+<!--		<script src="{{ url_for('static',filename='js/change.js') }}" defer="defer"></script>-->
+		<script type="text/javascript" defer="defer">
+            var data = 0;
+            console.log("data");
+            function sendData() {
+            	data = $("#search").val();
+            	console.log(data);
+            	window.location.href='/result'
+                $.ajax({
+                    url: '',
+                    dataType: 'json',
+                    type: 'POST',
+                    async: true,
+                    data: JSON.stringify(data),
+                    processData: false,
+                    contentType: "application/json",
+                    headers: {},
+                    success: function (data) {
+                        if (data['status'] == 200) {
+                            var r = confirm(data['msg']);
+                            if (r == true) {
+                                console.log("success")
+                            } else {
+                                console.log("fail")
+                            }
+                        } else {
+                            alert(data['msg'])
+                        }
+                    }
+                })
+            }
+
+        </script>
+		<div id="body">
+			<!-- 搜索 -->
+			<div id="searchBlk" class="searchBlk">
+				<input id="search" autocomplete="off" class="search-input" name placeholder="请输入商品链接">
+				<button id="searchButton" type="button" class="search-btn" onclick="sendData()" >
+<!--					<svg t="1635602617171" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1737" width="15" height="15"><path d="M1010.920992 956.078696l-170.954469-183.106115a471.355943 471.355943 0 0 0 107.190307-300.14565C947.15683 212.653801 735.014677 0 473.754294 0 212.429954 0 0.351758 212.653801 0.351758 473.402536a473.65836 473.65836 0 0 0 669.299857 431.063644 37.925926 37.925926 0 0 0 20.210105-22.064831 39.652739 39.652739 0 0 0-1.215165-29.547686 37.478234 37.478234 0 0 0-22.06483-20.274061 37.22241 37.22241 0 0 0-29.48373 1.215164 395.632003 395.632003 0 0 1-559.103616-359.816626 395.568047 395.568047 0 0 1 395.184311-395.184311 395.632003 395.632003 0 0 1 395.18431 395.184311 396.015739 396.015739 0 0 1-110.068328 274.115546 40.612079 40.612079 0 0 0-11.000437 27.820873c0 10.360877 4.540878 20.210106 12.08769 27.820873 0.63956 0.575604 1.726813 1.151209 2.366373 1.662857 0.575604 0 0.575604 0.63956 1.087253 0.63956 0 0.575604 0.63956 0.575604 0.63956 1.151209a11.512085 11.512085 0 0 0 2.366373 3.581537l187.135344 200.438199c7.482856 8.122416 17.971644 12.151646 28.396478 12.151646a38.885266 38.885266 0 0 0 26.605708-10.424833 40.292299 40.292299 0 0 0 12.72725-27.309225 38.373618 38.373618 0 0 0-9.785272-29.547686" fill="" p-id="1738"></path></svg>-->
+					<span style="font-size: inherit;">搜索&nbsp;</span>
+				</button>
+			</div>
+			<!-- tips -->
+			<div id="tips">
+				<p class="tips">这是一个网页</p>
+				<p class="tips">为您提供关于商品最真实的评价与建议</p>
+			</div>
+			<!-- 跳转 -->
+			<div id="jump" class="jump">
+				<a href="https://www.jd.com/?cu=true&utm_source=baidu-pinzhuan&utm_medium=cpc&utm_campaign=t_288551095_baidupinzhuan&utm_term=0f3d30c8dba7459bb52f2eb5eba8ac7d_0_407d81440c4c472b9006a36f2db04906"><img src="../static/images/支付,京东.png" class="tubiao"></a>
+				<a href="https://www.taobao.com/"><img src="../static/images/taobao.png" class="tubiao"></a>
+				<a href="https://www.tmall.com/?ali_trackid=2:mm_26632258_3504122_55934697:1635647826_121_664906367&union_lens=recoveryid:1635647826_121_664906367&clk1=77e122e7bc687829963ecf072f608555&bxsign=tbkGNXv2OOa0svh4HwMFKCBrXu1LqpcISX2EDcpabZt3mWRy8bl8ZWYv9kzaILiTfgwaGhAVPNr0xcgL1WiZsse8REn+zcuRdlBkwDAX/WX9hs="><img src="../static/images/天猫.png" class="tubiao"></a>
+				<a href="https://www.pinduoduo.com/"><img src="../static/images/拼多多.png"></a>
+			</div>
+			<div class="text" style="text-align:center;">
+				<span style="padding-right: 55px;">京 东</span>
+				<span style="padding-right: 50px;">淘 宝</span>
+				<span style="padding-right: 50px;">天 猫</span>
+				<span>拼多多</span>
+			</div>
+		</div>
+	</body>
+</html>

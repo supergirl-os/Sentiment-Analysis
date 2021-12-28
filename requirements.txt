@@ -1,0 +1,9 @@
+WTForms==2.3.3
+jieba==0.42.1
+gensim==3.8.3
+numpy==1.19.3
+pandas==1.0.5
+joblib==0.16.0
+matplotlib==3.2.2
+Flask==1.1.2
+scikit_learn==1.0.1

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+</head>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-size: cover;
+        background: url(../static/images/test_background.jpg) no-repeat fixed center 0;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+    }
+</style>
+<body>
+<script src="{{ url_for('static',filename='js/jquery-3.6.0.js') }}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/popper.js') }}"></script>
+{% from "_formhelpers.html" import render_field %}
+<div class="container">
+    <h1 class="display-3 text-center" style="color:indianred;margin-top:50px"><strong>基于SVM的中文评论情感分析</strong></h1>
+    <hr>
+    <h4 style="color:black">
+        <strong>请在文本框中输入内容</strong>
+        <hr>
+        <strong>点击下方按钮进行情感分析</strong>
+    </h4>
+    <hr>
+</div>
+<div class="content_div text-center">
+    <div>请输入您需要检测的文本?</div>
+    <form method="post" action="/main">
+        <dl>
+            {{ render_field(form.review) }}
+        </dl>
+        <input type="submit" value="commit review" name="submit_btn">
+    </form>
+</div>
+</body>
+</html>
